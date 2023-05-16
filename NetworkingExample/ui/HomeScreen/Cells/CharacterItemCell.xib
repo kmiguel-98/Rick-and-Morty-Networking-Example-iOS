@@ -38,8 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i78-hn-yR8">
-                                <rect key="frame" x="152" y="125.66666666666666" width="58.333333333333343" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="origin location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i78-hn-yR8">
+                                <rect key="frame" x="152" y="125.66666666666666" width="70" height="14"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,8 +50,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="First seen in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-Al-rsu">
-                                <rect key="frame" x="152" y="106" width="67.333333333333314" height="15.666666666666671"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Origin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-Al-rsu">
+                                <rect key="frame" x="152" y="106" width="39" height="15.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,11 +103,11 @@
             </constraints>
             <size key="customSize" width="508" height="270"/>
             <connections>
-                <outlet property="FirstSeenInUILabel" destination="i78-hn-yR8" id="Ejb-Ex-Vi3"/>
                 <outlet property="LastKnownLocationUILabel" destination="Wfh-6f-eRY" id="7Ag-n3-uTd"/>
                 <outlet property="StatusAndSpeciesUILabel" destination="3Ju-Yj-c05" id="UDQ-tM-Rsp"/>
                 <outlet property="characterUIImageView" destination="o5Y-Xt-0sL" id="wPL-5r-BOq"/>
                 <outlet property="nameUILabel" destination="2zL-nk-oLV" id="bAR-su-iEY"/>
+                <outlet property="originLocationUILabel" destination="i78-hn-yR8" id="Ejb-Ex-Vi3"/>
             </connections>
             <point key="canvasLocation" x="25.954198473282442" y="-66.549295774647888"/>
         </collectionViewCell>
