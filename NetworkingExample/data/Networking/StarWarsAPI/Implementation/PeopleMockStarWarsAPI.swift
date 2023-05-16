@@ -1,5 +1,5 @@
 //
-//  CharacterMockAPI.swift
+//  PeopleMockStarWarsAPI.swift
 //  NetworkingExample
 //
 //  Created by Miguel on 5/14/23.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-final class CharacterMockStarWarsAPI {
+final class PeopleMockStarWarsAPI {
 
-    static let shared = CharacterMockStarWarsAPI()
+    static let shared = PeopleMockStarWarsAPI()
     
     init() { }
 }
 
-extension CharacterMockStarWarsAPI: CharacterStarWarsAPIRepresentable {
+extension PeopleMockStarWarsAPI: PeopleStarWarsAPIRepresentable {
     
-    func fetchCharacters() async -> [Character] {
-        let characterList = (0...9).map {
-            Character(
+    func fetchPeople() async -> Result<[People], Failure> {
+        let peopleList = (0...9).map {
+            People(
                 name: "Character#\($0)",
                 height: "\($0) cm",
                 mass: "\($0) kg",
@@ -33,10 +33,9 @@ extension CharacterMockStarWarsAPI: CharacterStarWarsAPIRepresentable {
                 vehicles: [String](),
                 starships: [String](),
                 created: "",
-                edited: "",
-                url: "")
+                edited: "")
         }
         
-        return characterList
+        return .success(peopleList)
     }
 }

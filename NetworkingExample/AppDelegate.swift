@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationController = UINavigationController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        /*
+         Change the App's First Screen Here!
+         */
         let homeScreenCoordinator = HomeScreenCoordinator(navigationController)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = homeScreenCoordinator.navigationController

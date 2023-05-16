@@ -11,16 +11,17 @@ final class HomeScreenCoordinator : Coordinator {
     
     let navigationController: UINavigationController
     let homeScreenViewController: HomeScreenViewController
+    let useCases = CharacterUseCases()
     
     init(_ navController: UINavigationController) {
         navigationController = navController
-        
-        let useCases = CharacterUseCases()
+        let viewModel = HomeScreenViewModel(useCases)
         homeScreenViewController = HomeScreenViewController()
-        homeScreenViewController.viewModel = HomeScreenViewModel(useCases: useCases)
+        homeScreenViewController.viewModel = viewModel
     }
     
     func start() {
+        
         navigationController.pushViewController(homeScreenViewController, animated: false)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharacterDTO : Codable {
+struct PeopleDTO : Codable {
     let name : String?
     let height : String?
     let mass : String?
@@ -23,12 +23,11 @@ struct CharacterDTO : Codable {
     let starships : [String]?
     let created : String?
     let edited : String?
-    let url : String?
 }
 
-struct CharacterRequestResponse : Codable {
+struct PeopleResponse : Codable {
     let count : Int?
     let next : String?
     let previous : String?
-    let results : [CharacterDTO]?
+    let results : [PeopleDTO]?
 }

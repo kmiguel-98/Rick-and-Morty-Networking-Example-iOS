@@ -19,4 +19,5 @@ enum Failure: Error {
     case decodingError
     case urlConstructError
     case APIError(Error)
+    case repositoryError
 }

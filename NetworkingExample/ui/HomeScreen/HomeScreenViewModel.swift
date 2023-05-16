@@ -13,13 +13,21 @@ final class HomeScreenViewModel {
     
     var characterListDidChange: (([Character]) -> Void)?
     
-    var characters: [Character] = [] {
+    var errorDidChange: ((Error?) -> Void)?
+    
+    private(set) var characters: [Character] = [] {
         didSet {
             characterListDidChange?(characters)
         }
     }
     
-    init(useCases: CharacterUseCases) {
+    var error: Error? = nil {
+        didSet {
+            errorDidChange?(error)
+        }
+    }
+    
+    init(_ useCases: CharacterUseCases) {
         self.useCases = useCases
     }
     
@@ -32,7 +40,14 @@ final class HomeScreenViewModel {
     private func getCharacters() {
         
         Task {
-            characters = await useCases.getCharacters()
+            let response = await self.useCases.getCharacters()
+            
+            switch response {
+            case .success(let characterList):
+                self.characters = characterList
+            case .failure(let error):
+                self.error = error
+            }
         }
     }
 }

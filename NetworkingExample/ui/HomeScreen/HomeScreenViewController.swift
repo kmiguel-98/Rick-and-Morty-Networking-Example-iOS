@@ -8,7 +8,11 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
-
+    
+    @IBOutlet private weak var characterListContainerView: UIView!
+    
+    private let characterListCollectionViewController = CharacterListCollectionViewController()
+    
     var viewModel: HomeScreenViewModel!
     
     init() {
@@ -22,9 +26,11 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        viewModel.characterListDidChange = { characters in
-            print(characters)
-        }
+       
+        characterListCollectionViewController.viewModel = viewModel
+        add(viewController: characterListCollectionViewController, to: characterListContainerView)
+        
+
         
         super.viewDidLoad()
         

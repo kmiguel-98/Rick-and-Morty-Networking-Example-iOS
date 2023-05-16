@@ -15,5 +15,7 @@ class Constants {
     
     static let MOVIESAPIBASEURL = "https://api.themoviedb.org/3/"
     
-    static let STARWARSAPIBASEURL = "https://swapi.dev/api/"
+    static let STAR_WARS_API_BASE_URL = "https://swapi.dev/api/"
+    
+    static let RICK_AND_MORTY_API_BASE_URL = "https://rickandmortyapi.com/api/"
 }
