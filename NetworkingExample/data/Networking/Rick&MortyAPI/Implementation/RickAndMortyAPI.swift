@@ -36,15 +36,19 @@ final class RickAndMortyAPI {
     
     static let shared = RickAndMortyAPI()
     
+    internal let session = URLSession.shared
+    
     init() { }
 }
 
 extension RickAndMortyAPI: CharacterRickAndMortyAPIRepresentable {
     
-    func fetchCharacters() async -> Result<[Character], Failure> {
+    func fetchCharacters(page: String) async -> Result<[Character], Failure> {
         
-        guard let url = URL(string: "\(Constants.RICK_AND_MORTY_API_BASE_URL)/character") else { return .failure(Failure.urlConstructError) }
-        let session = URLSession.shared
+        guard var urlComponents = URLComponents(string: "\(Constants.RICK_AND_MORTY_API.BASE_URL)/character")  else { return .failure(Failure.urlConstructError) }
+        
+        urlComponents.queryItems = [URLQueryItem(name: "page", value: page)]
+        guard let url = urlComponents.url else { return .failure(Failure.urlConstructError) }
         
         do {
             let (data, _) = try await session.data(from: url)
@@ -54,6 +58,28 @@ extension RickAndMortyAPI: CharacterRickAndMortyAPIRepresentable {
             return .success(characterResponse.results?.compactMap { $0.toCharacterModel() } ?? [])
             
         } catch {
+            
+            return .failure(Failure.decodingError)
+        }
+    }
+    
+    func fetchSingleCharacter(id: String) async -> Result<Character, Failure> {
+        
+        guard var urlComponents = URLComponents(string: "\(Constants.RICK_AND_MORTY_API.BASE_URL)/character") else { return .failure(Failure.urlConstructError) }
+        
+        urlComponents.queryItems = [URLQueryItem(name: "page", value: id)]
+        guard let url = urlComponents.url else { return .failure(Failure.urlConstructError) }
+        
+        do {
+            
+            let (data, _) = try await session.data(from: url)
+            let decoder = JSONDecoder()
+            let character = try decoder.decode(CharacterDTO.self, from: data)
+            
+            return .success(character.toCharacterModel())
+            
+        } catch {
+            
             return .failure(Failure.decodingError)
         }
     }

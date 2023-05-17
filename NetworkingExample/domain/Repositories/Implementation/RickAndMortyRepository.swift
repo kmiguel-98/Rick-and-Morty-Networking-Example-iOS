@@ -31,8 +31,15 @@ final class RickAndMortyRepository {
 
 extension RickAndMortyRepository: CharacterRepository {
     
-    func getCharacters() async -> Result<[Character], Failure> {
+    func getCharacters(page: String) async -> Result<[Character], Failure> {
+        
         guard let _api = api.implementationClass as? CharacterRickAndMortyAPIRepresentable else { return .failure(Failure.repositoryError) }
-        return await _api.fetchCharacters()
+        return await _api.fetchCharacters(page: page)
+    }
+    
+    func getSingleCharacter(id: String) async -> Result<Character, Failure> {
+        
+        guard let _api = api.implementationClass as? CharacterRickAndMortyAPIRepresentable else { return .failure(Failure.repositoryError) }
+        return await _api.fetchSingleCharacter(id: id)
     }
 }

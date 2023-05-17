@@ -9,5 +9,7 @@ import Foundation
 
 protocol CharacterRepository {
     
-    func  getCharacters() async -> Result<[Character], Failure>
+    func  getCharacters(page: String) async -> Result<[Character], Failure>
+    
+    func  getSingleCharacter(id: String) async -> Result<Character, Failure>
 }

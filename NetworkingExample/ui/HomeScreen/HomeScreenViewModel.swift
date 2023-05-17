@@ -9,8 +9,6 @@ import Foundation
 
 final class HomeScreenViewModel {
     
-    let useCases: CharacterUseCases
-    
     var characterListDidChange: (([Character]) -> Void)?
     
     var errorDidChange: ((Error?) -> Void)?
@@ -21,33 +19,68 @@ final class HomeScreenViewModel {
         }
     }
     
-    var error: Error? = nil {
+    private var error: Error? = nil {
         didSet {
             errorDidChange?(error)
         }
     }
     
+    private var currentPage = -1
+    private let useCases: CharacterUseCases
+    
+    // MARK: Initializers.
     init(_ useCases: CharacterUseCases) {
         self.useCases = useCases
     }
     
-    // MARK: View Lifecycle
-    
-    func viewDidLoad() {
-        getCharacters()
+    // MARK: Public Methods.
+    func collectionViewDidScrollUntilBottom() {
+        loadNextPage()
     }
     
-    private func getCharacters() {
+    func collectionViewDidMadeRefreshGesture() {
+        refresh()
+    }
+    
+    // MARK: Private Methods.
+    private func refresh() {
+        
+        currentPage = 1
+        let page = String(currentPage)
         
         Task {
-            let response = await self.useCases.getCharacters()
-            
-            switch response {
-            case .success(let characterList):
+            let characterList = await getCharacters(page: page)
+            DispatchQueue.main.async {
                 self.characters = characterList
-            case .failure(let error):
-                self.error = error
             }
+        }
+    }
+    
+    private func loadNextPage() {
+        
+        currentPage += 1
+        let page = String(currentPage)
+        guard page <= Constants.RICK_AND_MORTY_API.LAST_PAGE_INDEX else { return }
+        
+        Task {
+            let characterList = await getCharacters(page: page)
+            let newCharacterList = self.characters + characterList
+            DispatchQueue.main.async {
+                self.characters = newCharacterList
+            }
+        }
+    }
+    
+    private func getCharacters(page: String) async -> [Character] {
+        
+        let response = await self.useCases.getCharacters(page: page)
+        
+        switch response {
+        case .success(let characterList):
+            return characterList
+        case .failure(let error):
+            self.error = error
+            return []
         }
     }
 }

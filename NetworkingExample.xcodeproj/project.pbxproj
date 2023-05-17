@@ -42,7 +42,7 @@
 		198FDBC22A12E52900D1387C /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FDBC12A12E52900D1387C /* GenericCollectionViewController.swift */; };
 		198FDBC72A12EBA600D1387C /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FDBC52A12EBA600D1387C /* CharacterItemCell.swift */; };
 		198FDBC82A12EBA600D1387C /* CharacterItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198FDBC62A12EBA600D1387C /* CharacterItemCell.xib */; };
-		198FDBCB2A132E9900D1387C /* UICollectionView+cellRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FDBCA2A132E9900D1387C /* UICollectionView+cellRegister.swift */; };
+		198FDBCB2A132E9900D1387C /* UICollectionView+CellRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FDBCA2A132E9900D1387C /* UICollectionView+CellRegister.swift */; };
 		19FD0E522A13E703002698E5 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 19FD0E512A13E703002698E5 /* Nuke */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 		198FDBC12A12E52900D1387C /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		198FDBC52A12EBA600D1387C /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
 		198FDBC62A12EBA600D1387C /* CharacterItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterItemCell.xib; sourceTree = "<group>"; };
-		198FDBCA2A132E9900D1387C /* UICollectionView+cellRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+cellRegister.swift"; sourceTree = "<group>"; };
+		198FDBCA2A132E9900D1387C /* UICollectionView+CellRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CellRegister.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,7 +403,7 @@
 		198FDBC92A132E7300D1387C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				198FDBCA2A132E9900D1387C /* UICollectionView+cellRegister.swift */,
+				198FDBCA2A132E9900D1387C /* UICollectionView+CellRegister.swift */,
 				1930AC612A13515300E612CE /* UIViewController+Helper.swift */,
 			);
 			path = Extensions;
@@ -556,7 +556,7 @@
 				1930AC622A13515300E612CE /* UIViewController+Helper.swift in Sources */,
 				196CE6D32A1190630003D434 /* PeopleMockStarWarsAPI.swift in Sources */,
 				196CE6CA2A11739E0003D434 /* PeopleStarWarsAPI.swift in Sources */,
-				198FDBCB2A132E9900D1387C /* UICollectionView+cellRegister.swift in Sources */,
+				198FDBCB2A132E9900D1387C /* UICollectionView+CellRegister.swift in Sources */,
 				196CE69C2A1093060003D434 /* Coordinator.swift in Sources */,
 				196CE6BF2A10B1DD0003D434 /* StarWarsRepository.swift in Sources */,
 				196CE6B02A10A7000003D434 /* PeopleUseCases.swift in Sources */,

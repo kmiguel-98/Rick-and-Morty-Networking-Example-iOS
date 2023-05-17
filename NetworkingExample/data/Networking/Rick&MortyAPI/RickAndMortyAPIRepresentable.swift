@@ -7,9 +7,14 @@
 
 import Foundation
 
-protocol RickAndMortyAPIRepresentable { }
+protocol RickAndMortyAPIRepresentable {
+
+    var session: URLSession { get }
+}
 
 protocol CharacterRickAndMortyAPIRepresentable: RickAndMortyAPIRepresentable {
     
-    func fetchCharacters() async -> Result<[Character], Failure>
+    func fetchCharacters(page: String) async -> Result<[Character], Failure>
+    
+    func fetchSingleCharacter(id: String) async -> Result<Character, Failure>
 }

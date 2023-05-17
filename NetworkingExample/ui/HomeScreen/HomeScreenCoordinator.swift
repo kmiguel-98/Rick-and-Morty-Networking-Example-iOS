@@ -21,7 +21,6 @@ final class HomeScreenCoordinator : Coordinator {
     }
     
     func start() {
-        
         navigationController.pushViewController(homeScreenViewController, animated: false)
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
+private var refreshControl = UIRefreshControl()
 
 class CharacterListCollectionViewController: GenericCollectionViewController<String, Character> {
     
@@ -37,14 +38,37 @@ class CharacterListCollectionViewController: GenericCollectionViewController<Str
         viewModel.characterListDidChange = { [unowned self] filteredCharacterList in
             elementsForSection[onlySection] = filteredCharacterList
             applySnapshot(animatingDifferences: true)
-            print(filteredCharacterList)
         }
+        
+        didScroll = { [unowned self] scrollView in
+            
+            if(didScrollUntilBottom(scrollView)) {
+                viewModel.collectionViewDidScrollUntilBottom()
+            }
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refreshCollectionView), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
         
         super.viewDidLoad()
     }
     
-    // MARK: - CollectionView Delegate
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    // MARK: Private Methods
+    @objc private func refreshCollectionView() {
+        viewModel.collectionViewDidMadeRefreshGesture()
         
+        DispatchQueue.main.async {
+            self.collectionView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    private func didScrollUntilBottom(_ scrollView: UIScrollView) -> Bool {
+        
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+
+        return offsetY > contentHeight - height
     }
 }

@@ -12,11 +12,11 @@ final class CharacterUseCases {
     /*
      Here u can change the data origin
      */
-    let api = RickAndMortyAPIs.RickAndMortyApi
+    var api = RickAndMortyAPIs.RickAndMortyApi
     
     lazy var repository: RickAndMortyRepository = { RickAndMortyRepository(self.api) }()
     
-    func getCharacters() async -> Result<[Character], Failure> {
-        return await repository.getCharacters()
+    func getCharacters(page: String) async -> Result<[Character], Failure> {
+        return await repository.getCharacters(page: page)
     }
 }

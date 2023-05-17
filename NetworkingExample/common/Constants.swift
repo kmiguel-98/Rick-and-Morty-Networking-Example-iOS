@@ -17,5 +17,8 @@ class Constants {
     
     static let STAR_WARS_API_BASE_URL = "https://swapi.dev/api/"
     
-    static let RICK_AND_MORTY_API_BASE_URL = "https://rickandmortyapi.com/api/"
+    class RICK_AND_MORTY_API {
+        static let BASE_URL = "https://rickandmortyapi.com/api/"
+        static let LAST_PAGE_INDEX = "42"
+    }
 }
