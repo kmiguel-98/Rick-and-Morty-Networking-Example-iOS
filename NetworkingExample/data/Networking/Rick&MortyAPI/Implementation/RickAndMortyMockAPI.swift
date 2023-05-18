@@ -16,12 +16,17 @@ final class RickAndMortyMockAPI {
 
 extension RickAndMortyMockAPI: CharacterRickAndMortyAPIRepresentable {
     
+    var session: URLSession { URLSession.shared }
     
     func fetchCharacters(page: String) async -> Result<[Character], Failure> {
+        
+        //Return Mock data from here!
         return .success([])
     }
     
-    func fetchSingleCharacter(page: String) async -> Result<Character, Failure> {
-        return .success([])
+    func fetchSingleCharacter(id: String) async -> Result<Character, Failure> {
+        
+        //Return Mock data from here!
+        return .failure(Failure.decodingError)
     }
 }

@@ -13,10 +13,11 @@ class CharacterListContainerViewController: UIViewController {
     
     private let characterListCollectionViewController = CharacterListCollectionViewController()
     
-    var viewModel: CharacterListViewModel!
+    private (set) var viewModel: CharacterListViewModel!
     
-    init() {
-        super.init(nibName: "HomeScreenViewController",
+    init(_ viewModel: CharacterListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "CharacterListContainerViewController",
                    bundle: Bundle(for: CharacterListContainerViewController.self))
     }
     

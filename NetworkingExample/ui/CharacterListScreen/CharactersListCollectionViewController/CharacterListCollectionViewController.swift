@@ -12,7 +12,7 @@ private var refreshControl = UIRefreshControl()
 
 class CharacterListCollectionViewController: GenericCollectionViewController<String, Character> {
     
-    var viewModel: HomeScreenViewModel!
+    var viewModel: CharacterListViewModel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -45,6 +45,10 @@ class CharacterListCollectionViewController: GenericCollectionViewController<Str
             if(didScrollUntilBottom(scrollView)) {
                 viewModel.collectionViewDidScrollUntilBottom()
             }
+        }
+        
+        didSelectElement = {
+            
         }
         
         refreshControl.addTarget(self, action: #selector(refreshCollectionView), for: .valueChanged)

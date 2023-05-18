@@ -8,6 +8,12 @@
 import Foundation
 
 enum Failure: Error {
+    
+    case decodingError
+    case urlConstructError
+    case APIError(Error)
+    case repositoryError
+    
     var title: String {
         "Servidor temporalmente no disponible"
     }
@@ -15,9 +21,4 @@ enum Failure: Error {
     var localizedDescription: String {
         "Estamos trabajando para resolver este problema, gracias por su paciencia."
     }
-    
-    case decodingError
-    case urlConstructError
-    case APIError(Error)
-    case repositoryError
 }

@@ -7,7 +7,14 @@
 
 import Foundation
 
+protocol CharacterListScreenCoordinatorRepresentable {
+    
+    func navigateToDetailScreen(with id: String)
+}
+
 final class CharacterListViewModel {
+    
+    var coordinator: CharacterListScreenCoordinatorRepresentable!
     
     var characterListDidChange: (([Character]) -> Void)?
     
@@ -40,6 +47,10 @@ final class CharacterListViewModel {
     
     func collectionViewDidMadeRefreshGesture() {
         refresh()
+    }
+    
+    func didTapElement(elementId: String) {
+        coordinator.navigateToDetailScreen(with: elementId)
     }
     
     // MARK: Private Methods.

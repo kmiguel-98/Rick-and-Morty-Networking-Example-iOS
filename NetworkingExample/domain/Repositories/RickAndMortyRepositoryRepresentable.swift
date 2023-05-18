@@ -7,7 +7,11 @@
 
 import Foundation
 
-protocol CharacterRepository {
+protocol RickAndMortyRepositoryRepresentable { }
+
+protocol RickAndMortyCharacterRepositoryRepresentable: AnyObject, RickAndMortyRepositoryRepresentable {
+    
+    var _api: RickAndMortyAPIs { get set }
     
     func  getCharacters(page: String) async -> Result<[Character], Failure>
     
