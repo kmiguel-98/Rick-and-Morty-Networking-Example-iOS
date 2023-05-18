@@ -7,17 +7,17 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+class CharacterListContainerViewController: UIViewController {
     
     @IBOutlet private weak var characterListContainerView: UIView!
     
     private let characterListCollectionViewController = CharacterListCollectionViewController()
     
-    var viewModel: HomeScreenViewModel!
+    var viewModel: CharacterListViewModel!
     
     init() {
         super.init(nibName: "HomeScreenViewController",
-                   bundle: Bundle(for: HomeScreenViewController.self))
+                   bundle: Bundle(for: CharacterListContainerViewController.self))
     }
     
     required init?(coder: NSCoder) {

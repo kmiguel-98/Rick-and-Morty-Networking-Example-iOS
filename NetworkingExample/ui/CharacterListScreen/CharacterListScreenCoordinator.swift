@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class HomeScreenCoordinator : Coordinator {
+final class CharacterListScreenCoordinator : Coordinator {
     
     let navigationController: UINavigationController
     let homeScreenViewController: HomeScreenViewController
-    let useCases = CharacterUseCases()
+    let useCases = RickAndMortyCharacterUseCases()
     
     init(_ navController: UINavigationController) {
         navigationController = navController

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CharacterUseCases {
+final class RickAndMortyCharacterUseCases {
     
     /*
      Here u can change the data origin
@@ -17,6 +17,12 @@ final class CharacterUseCases {
     lazy var repository: RickAndMortyRepository = { RickAndMortyRepository(self.api) }()
     
     func getCharacters(page: String) async -> Result<[Character], Failure> {
+        
         return await repository.getCharacters(page: page)
+    }
+    
+    func getSingleCharacter(id: String) async -> Result<Character, Failure> {
+        
+        return await repository.getSingleCharacter(id: id)
     }
 }

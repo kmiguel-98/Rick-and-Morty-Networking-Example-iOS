@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HomeScreenViewModel {
+final class CharacterListViewModel {
     
     var characterListDidChange: (([Character]) -> Void)?
     
@@ -26,10 +26,10 @@ final class HomeScreenViewModel {
     }
     
     private var currentPage = -1
-    private let useCases: CharacterUseCases
+    private let useCases: RickAndMortyCharacterUseCases
     
     // MARK: Initializers.
-    init(_ useCases: CharacterUseCases) {
+    init(_ useCases: RickAndMortyCharacterUseCases) {
         self.useCases = useCases
     }
     
