@@ -11,10 +11,10 @@ final class CharacterDetailViewModel {
     
     var characterDidChange: ((Character) -> Void)?
     
-    private(set) var characters: Character! {
+    private(set) var character: Character! = nil {
         didSet {
             
-            characterDidChange?(characters)
+            characterDidChange?(character)
         }
     }
     
@@ -27,25 +27,25 @@ final class CharacterDetailViewModel {
         }
     }
     
-    private var character: Character!
     private let characterUseCases: RickAndMortyCharacterUseCases
     
     // MARK: Initializers
-    init(_ useCases: RickAndMortyCharacterUseCases, id: String) {
+    init(_ useCases: RickAndMortyCharacterUseCases) {
         
         characterUseCases = useCases
-        getSingleCharacter(id: id)
     }
     
-    //MARK: Private Methods
-    private func getSingleCharacter(id: String) {
+    //MARK: Public Methods
+    func getSingleCharacter(id: String) {
         
         Task {
             let response = await characterUseCases.getSingleCharacter(id: id)
             
             switch response {
             case .success(let character):
-                self.character = character
+                DispatchQueue.main.async {
+                    self.character = character
+                }
             case .failure(let error):
                 self.error = error
             }

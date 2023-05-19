@@ -11,7 +11,7 @@ extension UIImageView {
     
     func loadImage(from url: String) -> UIImage {
         
-        var image = UIImage()
+        let image = UIImage()
         
         if let url = URL(string: url) {
             
@@ -24,8 +24,8 @@ extension UIImageView {
                 }
                 
                 guard let imageData = data,
-                      let image = UIImage(data: imageData) else { return }
-                self.image = image
+                      let fetchedImage = UIImage(data: imageData) else { return }
+                self.image = fetchedImage
                 
             }
         }

@@ -34,8 +34,8 @@ extension CharacterListScreenCoordinator: CharacterListScreenCoordinatorRepresen
     
     func navigateToDetailScreen(with id: String) {
         
-        let viewModel = CharacterDetailViewModel(useCases, id: id)
-        let characterDetailViewController = CharacterDetailViewController(viewModel)
+        let viewModel = CharacterDetailViewModel(useCases)
+        let characterDetailViewController = CharacterDetailViewController(viewModel, id: id)
         
         navigationController.pushViewController(characterDetailViewController, animated: true)
     }

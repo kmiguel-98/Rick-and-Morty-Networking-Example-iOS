@@ -33,6 +33,7 @@ final class CharacterListViewModel {
     }
     
     private var currentPage = -1
+    
     private let useCases: RickAndMortyCharacterUseCases
     
     // MARK: Initializers.
@@ -42,14 +43,17 @@ final class CharacterListViewModel {
     
     // MARK: Public Methods.
     func collectionViewDidScrollUntilBottom() {
+        
         loadNextPage()
     }
     
     func collectionViewDidMadeRefreshGesture() {
+        
         refresh()
     }
     
     func didTapElement(elementId: String) {
+        
         coordinator.navigateToDetailScreen(with: elementId)
     }
     

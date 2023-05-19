@@ -26,16 +26,20 @@ class CharacterListContainerViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
-        title = "Rick & Morty Characters"
+   
         characterListCollectionViewController.viewModel = viewModel
         add(viewController: characterListCollectionViewController, to: characterListContainerView)
-
+        
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        title = "Rick & Morty Characters"
         // Set navigation bar visibility
         navigationController?.isNavigationBarHidden = false
         customizeNavigationBar()
-        
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -49,12 +53,11 @@ class CharacterListContainerViewController: UIViewController {
         else { return }
 
         let statusBarView = UIView(frame: statusBarManager.statusBarFrame)
-        statusBarView.backgroundColor = UIColor(named: "R&MPaletteSeanBlue")
+        statusBarView.backgroundColor = UIColor(named: "R&MPaletteGreen")
         view.addSubview(statusBarView)
         
-        navigationController?.navigationBar.barTintColor = UIColor(named: "R&MPaletteSeanBlue")
-        navigationController?.navigationBar.backgroundColor = UIColor(named: "R&MPaletteSeanBlue")
+        navigationController?.navigationBar.barTintColor = UIColor(named: "R&MPaletteGreen")
+        navigationController?.navigationBar.backgroundColor = UIColor(named: "R&MPaletteGreen")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        //navigationController.hidesBarsOnSwipe = true
     }
 }

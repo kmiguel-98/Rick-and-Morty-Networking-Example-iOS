@@ -11,6 +11,7 @@
 		1930AC652A1352A500E612CE /* IHProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1930AC642A1352A500E612CE /* IHProgressHUD */; };
 		19408E112A16D70B00D2E3F4 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E102A16D70B00D2E3F4 /* CharacterDetailViewController.swift */; };
 		19408E132A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E122A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift */; };
+		19408E152A17AFCE00D2E3F4 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19408E142A17AFCE00D2E3F4 /* CharacterDetailViewController.xib */; };
 		195CFFF92A158B1E00DDD11E /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CFFF82A158B1E00DDD11E /* CharacterDetailViewModel.swift */; };
 		196CE66C2A1091CA0003D434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CE66B2A1091CA0003D434 /* AppDelegate.swift */; };
 		196CE6752A1091CC0003D434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 196CE6742A1091CC0003D434 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		1930AC612A13515300E612CE /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		19408E102A16D70B00D2E3F4 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		19408E122A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImageFromString.swift"; sourceTree = "<group>"; };
+		19408E142A17AFCE00D2E3F4 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
 		195CFFF82A158B1E00DDD11E /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		196CE6682A1091CA0003D434 /* NetworkingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		196CE66B2A1091CA0003D434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -248,9 +250,9 @@
 		196CE6A52A1098B90003D434 /* CharacterListScreen */ = {
 			isa = PBXGroup;
 			children = (
-				198FDB9B2A11D00E00D1387C /* CharactersListCollectionViewController */,
 				196CE69D2A10934B0003D434 /* CharacterListScreenCoordinator.swift */,
 				196CE6B62A10A9AA0003D434 /* CharacterListViewModel.swift */,
+				198FDB9B2A11D00E00D1387C /* CharactersListCollectionViewController */,
 				196CE6A62A1099930003D434 /* CharacterListContainerViewController.swift */,
 				196CE6A72A1099930003D434 /* CharacterListContainerViewController.xib */,
 			);
@@ -422,6 +424,7 @@
 			children = (
 				195CFFF82A158B1E00DDD11E /* CharacterDetailViewModel.swift */,
 				19408E102A16D70B00D2E3F4 /* CharacterDetailViewController.swift */,
+				19408E142A17AFCE00D2E3F4 /* CharacterDetailViewController.xib */,
 			);
 			path = CharacterDetailScreen;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				196CE6A92A1099930003D434 /* CharacterListContainerViewController.xib in Resources */,
 				196CE6782A1091CC0003D434 /* LaunchScreen.storyboard in Resources */,
 				198FDBC82A12EBA600D1387C /* CharacterItemCell.xib in Resources */,
+				19408E152A17AFCE00D2E3F4 /* CharacterDetailViewController.xib in Resources */,
 				196CE6752A1091CC0003D434 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

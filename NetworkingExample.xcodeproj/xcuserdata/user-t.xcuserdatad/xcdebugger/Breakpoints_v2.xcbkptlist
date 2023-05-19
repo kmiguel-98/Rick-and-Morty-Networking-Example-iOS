@@ -84,5 +84,148 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E93A8DC-CFE4-4247-96A9-2FE1767A18D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkingExample/ui/CharacterListScreen/CharactersListCollectionViewController/CharacterListCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "554C47E5-9476-494B-897A-A24EE598EA5B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkingExample/ui/CharacterListScreen/CharacterListScreenCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "navigateToDetailScreen(with:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DB11DB0-14DC-4E88-8947-FE80B2F3A14E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkingExample/ui/CharacterDetailScreen/CharacterDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "character"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17920A66-D348-4CC0-A493-E09A61379A17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkingExample/domain/Repositories/Implementation/RickAndMortyRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getSingleCharacter(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "17920A66-D348-4CC0-A493-E09A61379A17 - e25c86837e6247c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for NetworkingExample.RickAndMortyRepository.getSingleCharacter(id: Swift.String) async -&gt; Swift.Result&lt;NetworkingExample.Character, NetworkingExample.Failure&gt;"
+                  moduleName = "NetworkingExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user-t/Developer/Backup/NetworkingExample/NetworkingExample/domain/Repositories/Implementation/RickAndMortyRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  uuid = "17920A66-D348-4CC0-A493-E09A61379A17 - 185443a70b2688bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for NetworkingExample.RickAndMortyRepository.getSingleCharacter(id: Swift.String) async -&gt; Swift.Result&lt;NetworkingExample.Character, NetworkingExample.Failure&gt;"
+                  moduleName = "NetworkingExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user-t/Developer/Backup/NetworkingExample/NetworkingExample/domain/Repositories/Implementation/RickAndMortyRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "17920A66-D348-4CC0-A493-E09A61379A17 - 88cc5b412b06e3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for NetworkingExample.RickAndMortyRepository.getSingleCharacter(id: Swift.String) async -&gt; Swift.Result&lt;NetworkingExample.Character, NetworkingExample.Failure&gt;"
+                  moduleName = "NetworkingExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user-t/Developer/Backup/NetworkingExample/NetworkingExample/domain/Repositories/Implementation/RickAndMortyRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E17D9A52-B3B4-4515-9121-A87334FE49AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkingExample/data/Networking/Rick&amp;MortyAPI/Implementation/RickAndMortyAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "fetchSingleCharacter(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD5AE26C-FFB6-4893-9AF4-B0878DEE73A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkingExample/ui/CharacterDetailScreen/CharacterDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getSingleCharacter(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

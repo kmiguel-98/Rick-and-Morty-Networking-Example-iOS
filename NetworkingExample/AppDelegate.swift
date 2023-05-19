@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
          Change the App's First Screen Here!
          */
+        navigationController.navigationBar.tintColor = UIColor.white
         let homeScreenCoordinator = CharacterListScreenCoordinator(navigationController)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = homeScreenCoordinator.navigationController
