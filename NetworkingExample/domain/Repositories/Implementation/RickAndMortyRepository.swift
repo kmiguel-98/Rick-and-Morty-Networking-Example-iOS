@@ -21,25 +21,27 @@ enum RickAndMortyAPIs {
 
 final class RickAndMortyRepository {
     
-    var api: RickAndMortyAPIs = .RickAndMortyApi
+    internal var _api: RickAndMortyAPIs = .RickAndMortyApi
     
     init(_ api: RickAndMortyAPIs?) {
         
-        if let api { self.api = api }
+        if let api { self._api = api }
     }
 }
 
-extension RickAndMortyRepository: CharacterRepository {
+extension RickAndMortyRepository: RickAndMortyCharacterRepositoryRepresentable {
+    
+    var api:  CharacterRickAndMortyAPIRepresentable {
+        _api.implementationClass as! CharacterRickAndMortyAPIRepresentable
+    }
     
     func getCharacters(page: String) async -> Result<[Character], Failure> {
         
-        guard let _api = api.implementationClass as? CharacterRickAndMortyAPIRepresentable else { return .failure(Failure.repositoryError) }
-        return await _api.fetchCharacters(page: page)
+        return await api.fetchCharacters(page: page)
     }
     
     func getSingleCharacter(id: String) async -> Result<Character, Failure> {
         
-        guard let _api = api.implementationClass as? CharacterRickAndMortyAPIRepresentable else { return .failure(Failure.repositoryError) }
-        return await _api.fetchSingleCharacter(id: id)
+        return await api.fetchSingleCharacter(id: id)
     }
 }

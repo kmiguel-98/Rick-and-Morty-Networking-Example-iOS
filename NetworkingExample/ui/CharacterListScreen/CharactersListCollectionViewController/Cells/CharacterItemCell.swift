@@ -22,8 +22,9 @@ class CharacterItemCell: UICollectionViewCell, NibLoadable {
         StatusAndSpeciesUILabel.text = "\(character.status) - \(character.species)"
         LastKnownLocationUILabel.text = character.location.name
         originLocationUILabel.text = character.origin.name
-        
-        if let url = URL(string: character.image){
+            
+        if let url = URL(string: character.image) {
+            
             Nuke.loadImage(with: url, into: characterUIImageView)
         }
     }

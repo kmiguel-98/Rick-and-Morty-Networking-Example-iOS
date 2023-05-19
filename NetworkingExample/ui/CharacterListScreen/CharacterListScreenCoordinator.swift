@@ -7,20 +7,36 @@
 
 import UIKit
 
-final class CharacterListScreenCoordinator : Coordinator {
+final class CharacterListScreenCoordinator {
     
     let navigationController: UINavigationController
-    let homeScreenViewController: HomeScreenViewController
+    let characterListViewController: CharacterListContainerViewController
+    let viewModel: CharacterListViewModel
     let useCases = RickAndMortyCharacterUseCases()
     
     init(_ navController: UINavigationController) {
+        
         navigationController = navController
-        let viewModel = HomeScreenViewModel(useCases)
-        homeScreenViewController = HomeScreenViewController()
-        homeScreenViewController.viewModel = viewModel
+        viewModel = CharacterListViewModel(useCases)
+        characterListViewController = CharacterListContainerViewController(viewModel)
     }
+}
+
+extension CharacterListScreenCoordinator: Coordinator {
     
     func start() {
-        navigationController.pushViewController(homeScreenViewController, animated: false)
+        viewModel.coordinator = self
+        navigationController.pushViewController(characterListViewController, animated: false)
+    }
+}
+
+extension CharacterListScreenCoordinator: CharacterListScreenCoordinatorRepresentable {
+    
+    func navigateToDetailScreen(with id: String) {
+        
+        let viewModel = CharacterDetailViewModel(useCases)
+        let characterDetailViewController = CharacterDetailViewController(viewModel, id: id)
+        
+        navigationController.pushViewController(characterDetailViewController, animated: true)
     }
 }

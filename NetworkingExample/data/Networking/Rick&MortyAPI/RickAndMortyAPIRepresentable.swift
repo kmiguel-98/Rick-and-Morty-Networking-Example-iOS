@@ -12,7 +12,7 @@ protocol RickAndMortyAPIRepresentable {
     var session: URLSession { get }
 }
 
-protocol CharacterRickAndMortyAPIRepresentable: RickAndMortyAPIRepresentable {
+protocol CharacterRickAndMortyAPIRepresentable: AnyObject, RickAndMortyAPIRepresentable {
     
     func fetchCharacters(page: String) async -> Result<[Character], Failure>
     
