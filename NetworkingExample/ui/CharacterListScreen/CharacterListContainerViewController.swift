@@ -7,13 +7,13 @@
 
 import UIKit
 
-class CharacterListContainerViewController: UIViewController {
+final class CharacterListContainerViewController: UIViewController {
     
     @IBOutlet private weak var characterListContainerView: UIView!
     
     private let characterListCollectionViewController = CharacterListCollectionViewController()
     
-    private (set) var viewModel: CharacterListViewModel!
+    private(set) var viewModel: CharacterListViewModel!
     
     init(_ viewModel: CharacterListViewModel) {
         self.viewModel = viewModel
@@ -36,9 +36,8 @@ class CharacterListContainerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         title = "Rick & Morty Characters"
-        // Set navigation bar visibility
         navigationController?.isNavigationBarHidden = false
-        customizeNavigationBar()
+        setNavigationBar()
         super.viewWillAppear(animated)
     }
     
@@ -46,7 +45,7 @@ class CharacterListContainerViewController: UIViewController {
         return .lightContent
     }
     
-    private func customizeNavigationBar() {
+    private func setNavigationBar() {
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let statusBarManager = windowScene.windows.first?.windowScene?.statusBarManager

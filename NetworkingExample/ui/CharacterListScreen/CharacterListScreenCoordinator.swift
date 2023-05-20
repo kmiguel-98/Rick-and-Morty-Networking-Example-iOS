@@ -10,22 +10,24 @@ import UIKit
 final class CharacterListScreenCoordinator {
     
     let navigationController: UINavigationController
-    let characterListViewController: CharacterListContainerViewController
-    let viewModel: CharacterListViewModel
-    let useCases = RickAndMortyCharacterUseCases()
+    private let characterListViewController: CharacterListContainerViewController
+    private let characterListViewModel: CharacterListViewModel
+    private var useCases: RickAndMortyCharacterUseCases
     
     init(_ navController: UINavigationController) {
         
         navigationController = navController
-        viewModel = CharacterListViewModel(useCases)
-        characterListViewController = CharacterListContainerViewController(viewModel)
+        useCases = RickAndMortyCharacterUseCases()
+        characterListViewModel = CharacterListViewModel(useCases)
+        characterListViewController = CharacterListContainerViewController(characterListViewModel)
     }
 }
 
 extension CharacterListScreenCoordinator: Coordinator {
     
     func start() {
-        viewModel.coordinator = self
+        
+        characterListViewModel.coordinator = self
         navigationController.pushViewController(characterListViewController, animated: false)
     }
 }
@@ -36,7 +38,6 @@ extension CharacterListScreenCoordinator: CharacterListScreenCoordinatorRepresen
         
         let viewModel = CharacterDetailViewModel(useCases)
         let characterDetailViewController = CharacterDetailViewController(viewModel, id: id)
-        
         navigationController.pushViewController(characterDetailViewController, animated: true)
     }
 }

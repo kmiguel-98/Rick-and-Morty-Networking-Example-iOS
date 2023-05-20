@@ -10,8 +10,12 @@
 		1930AC622A13515300E612CE /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930AC612A13515300E612CE /* UIViewController+Helper.swift */; };
 		1930AC652A1352A500E612CE /* IHProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1930AC642A1352A500E612CE /* IHProgressHUD */; };
 		19408E112A16D70B00D2E3F4 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E102A16D70B00D2E3F4 /* CharacterDetailViewController.swift */; };
-		19408E132A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E122A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift */; };
 		19408E152A17AFCE00D2E3F4 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19408E142A17AFCE00D2E3F4 /* CharacterDetailViewController.xib */; };
+		19408E172A18666800D2E3F4 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E162A18666800D2E3F4 /* LocationDTO.swift */; };
+		19408E192A1866A000D2E3F4 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E182A1866A000D2E3F4 /* CharacterResponse.swift */; };
+		19408E1D2A18670500D2E3F4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E1C2A18670500D2E3F4 /* Location.swift */; };
+		19408E1F2A186F8E00D2E3F4 /* CharacterListScreenCoordinatorRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E1E2A186F8E00D2E3F4 /* CharacterListScreenCoordinatorRepresentable.swift */; };
+		19408E212A18795A00D2E3F4 /* RoundedUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19408E202A18795A00D2E3F4 /* RoundedUIImageView.swift */; };
 		195CFFF92A158B1E00DDD11E /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CFFF82A158B1E00DDD11E /* CharacterDetailViewModel.swift */; };
 		196CE66C2A1091CA0003D434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196CE66B2A1091CA0003D434 /* AppDelegate.swift */; };
 		196CE6752A1091CC0003D434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 196CE6742A1091CC0003D434 /* Assets.xcassets */; };
@@ -70,8 +74,12 @@
 /* Begin PBXFileReference section */
 		1930AC612A13515300E612CE /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		19408E102A16D70B00D2E3F4 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
-		19408E122A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImageFromString.swift"; sourceTree = "<group>"; };
 		19408E142A17AFCE00D2E3F4 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		19408E162A18666800D2E3F4 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
+		19408E182A1866A000D2E3F4 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
+		19408E1C2A18670500D2E3F4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		19408E1E2A186F8E00D2E3F4 /* CharacterListScreenCoordinatorRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListScreenCoordinatorRepresentable.swift; sourceTree = "<group>"; };
+		19408E202A18795A00D2E3F4 /* RoundedUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIImageView.swift; sourceTree = "<group>"; };
 		195CFFF82A158B1E00DDD11E /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		196CE6682A1091CA0003D434 /* NetworkingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		196CE66B2A1091CA0003D434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +148,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19408E1A2A1866BB00D2E3F4 /* RickAndMorty */ = {
+			isa = PBXGroup;
+			children = (
+				19408E182A1866A000D2E3F4 /* CharacterResponse.swift */,
+				198FDBAA2A12C82F00D1387C /* Character.swift */,
+				19408E1C2A18670500D2E3F4 /* Location.swift */,
+			);
+			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		19408E1B2A1866D600D2E3F4 /* StarWars */ = {
+			isa = PBXGroup;
+			children = (
+				196CE6C62A1170DC0003D434 /* People.swift */,
+			);
+			path = StarWars;
+			sourceTree = "<group>";
+		};
 		196CE65F2A1091CA0003D434 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				196CE69B2A1093060003D434 /* Coordinator.swift */,
+				19408E1E2A186F8E00D2E3F4 /* CharacterListScreenCoordinatorRepresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -262,8 +289,8 @@
 		196CE6B12A10A89B0003D434 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				196CE6C62A1170DC0003D434 /* People.swift */,
-				198FDBAA2A12C82F00D1387C /* Character.swift */,
+				19408E1A2A1866BB00D2E3F4 /* RickAndMorty */,
+				19408E1B2A1866D600D2E3F4 /* StarWars */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				198FDBA42A12C4CD00D1387C /* CharacterDTO.swift */,
+				19408E162A18666800D2E3F4 /* LocationDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -405,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				198FDBC12A12E52900D1387C /* GenericCollectionViewController.swift */,
+				19408E202A18795A00D2E3F4 /* RoundedUIImageView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -414,7 +443,6 @@
 			children = (
 				198FDBCA2A132E9900D1387C /* UICollectionView+CellRegister.swift */,
 				1930AC612A13515300E612CE /* UIViewController+Helper.swift */,
-				19408E122A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -571,6 +599,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				196CE6AC2A10A1070003D434 /* Constants.swift in Sources */,
+				19408E1F2A186F8E00D2E3F4 /* CharacterListScreenCoordinatorRepresentable.swift in Sources */,
+				19408E1D2A18670500D2E3F4 /* Location.swift in Sources */,
 				196CE6B72A10A9AA0003D434 /* CharacterListViewModel.swift in Sources */,
 				198FDBBB2A12DE9F00D1387C /* RickAndMortyCharacterUseCases.swift in Sources */,
 				198FDBA02A11D0C000D1387C /* CharacterListCollectionViewController.swift in Sources */,
@@ -584,8 +614,11 @@
 				198FDBB32A12D1A200D1387C /* RickAndMortyRepository.swift in Sources */,
 				196CE6A82A1099930003D434 /* CharacterListContainerViewController.swift in Sources */,
 				196CE69E2A10934B0003D434 /* CharacterListScreenCoordinator.swift in Sources */,
+				19408E192A1866A000D2E3F4 /* CharacterResponse.swift in Sources */,
 				196CE6C72A1170DC0003D434 /* People.swift in Sources */,
 				19408E112A16D70B00D2E3F4 /* CharacterDetailViewController.swift in Sources */,
+				19408E212A18795A00D2E3F4 /* RoundedUIImageView.swift in Sources */,
+				19408E172A18666800D2E3F4 /* LocationDTO.swift in Sources */,
 				196CE66C2A1091CA0003D434 /* AppDelegate.swift in Sources */,
 				198FDBBD2A12E1C500D1387C /* StarWarsRepositoryRepresentable.swift in Sources */,
 				198FDBB72A12D7EF00D1387C /* RickAndMortyAPIRepresentable.swift in Sources */,
@@ -596,7 +629,6 @@
 				196CE6C52A1170590003D434 /* PeopleDTO.swift in Sources */,
 				198FDBA52A12C4CD00D1387C /* CharacterDTO.swift in Sources */,
 				198FDBC22A12E52900D1387C /* GenericCollectionViewController.swift in Sources */,
-				19408E132A16DD4B00D2E3F4 /* UIImageView+loadImageFromString.swift in Sources */,
 				196CE6CD2A1174380003D434 /* Failure.swift in Sources */,
 				198FDBAB2A12C82F00D1387C /* Character.swift in Sources */,
 				198FDBB92A12DBFA00D1387C /* RickAndMortyRepositoryRepresentable.swift in Sources */,

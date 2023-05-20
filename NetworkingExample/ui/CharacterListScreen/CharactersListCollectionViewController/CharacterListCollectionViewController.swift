@@ -10,15 +10,15 @@ import UIKit
 private let reuseIdentifier = "Cell"
 private var refreshControl = UIRefreshControl()
 
-class CharacterListCollectionViewController: GenericCollectionViewController<String, Character> {
+final class CharacterListCollectionViewController: GenericCollectionViewController<String, Character> {
     
     var viewModel: CharacterListViewModel!
+    let onlySection = "OneSection"
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         
         numberOfColumns = 1
-        let onlySection = "OneSection"
         sections = [onlySection]
         allowHeaderViewRender = false
         allowElementToBeSelected = true
@@ -35,10 +35,34 @@ class CharacterListCollectionViewController: GenericCollectionViewController<Str
             cell.configure(character: character)
             return cell
         }
+  
+        refreshControl.addTarget(self, action: #selector(refreshCollectionView), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+  
+        
+        setObservables()
+        super.viewDidLoad()
+    }
+    
+    // MARK: Private Methods
+    @objc private func refreshCollectionView() {
+        
+        viewModel.collectionViewDidMadeRefreshGesture()
+        
+        DispatchQueue.main.async {
+            self.collectionView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    private func setObservables() {
         
         viewModel.characterListDidChange = { [unowned self] filteredCharacterList in
             elementsForSection[onlySection] = filteredCharacterList
             applySnapshot(animatingDifferences: true)
+        }
+        
+        viewModel.errorDidChange = { error in
+            //show error message or error screen
         }
         
         didScroll = { [unowned self] scrollView in
@@ -49,23 +73,7 @@ class CharacterListCollectionViewController: GenericCollectionViewController<Str
         }
         
         didSelectElement = { [unowned self] _, character in
-            
             viewModel.didTapElement(elementId: String(character.id))
-        }
-        
-        refreshControl.addTarget(self, action: #selector(refreshCollectionView), for: .valueChanged)
-        collectionView.refreshControl = refreshControl
-        
-        super.viewDidLoad()
-    }
-    
-    
-    // MARK: Private Methods
-    @objc private func refreshCollectionView() {
-        viewModel.collectionViewDidMadeRefreshGesture()
-        
-        DispatchQueue.main.async {
-            self.collectionView.refreshControl?.endRefreshing()
         }
     }
     

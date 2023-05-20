@@ -7,10 +7,7 @@
 
 import Foundation
 
-protocol RickAndMortyAPIRepresentable {
-
-    var session: URLSession { get }
-}
+protocol RickAndMortyAPIRepresentable { }
 
 protocol CharacterRickAndMortyAPIRepresentable: AnyObject, RickAndMortyAPIRepresentable {
     

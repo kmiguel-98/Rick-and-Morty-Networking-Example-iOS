@@ -7,11 +7,6 @@
 
 import Foundation
 
-protocol CharacterListScreenCoordinatorRepresentable {
-    
-    func navigateToDetailScreen(with id: String)
-}
-
 final class CharacterListViewModel {
     
     var coordinator: CharacterListScreenCoordinatorRepresentable!
@@ -26,7 +21,7 @@ final class CharacterListViewModel {
         }
     }
     
-    private var error: Error? = nil {
+    private(set) var error: Error? = nil {
         didSet {
             errorDidChange?(error)
         }
@@ -43,17 +38,14 @@ final class CharacterListViewModel {
     
     // MARK: Public Methods.
     func collectionViewDidScrollUntilBottom() {
-        
         loadNextPage()
     }
     
     func collectionViewDidMadeRefreshGesture() {
-        
         refresh()
     }
     
     func didTapElement(elementId: String) {
-        
         coordinator.navigateToDetailScreen(with: elementId)
     }
     
@@ -75,13 +67,14 @@ final class CharacterListViewModel {
         
         currentPage += 1
         let page = String(currentPage)
-        guard page <= Constants.RICK_AND_MORTY_API.LAST_PAGE_INDEX else { return }
-        
-        Task {
-            let characterList = await getCharacters(page: page)
-            let newCharacterList = self.characters + characterList
-            DispatchQueue.main.async {
-                self.characters = newCharacterList
+        if page <= Constants.RICK_AND_MORTY_API.LAST_PAGE_INDEX {
+            
+            Task {
+                let characterList = await getCharacters(page: page)
+                let newCharacterList = self.characters + characterList
+                DispatchQueue.main.async {
+                    self.characters = newCharacterList
+                }
             }
         }
     }

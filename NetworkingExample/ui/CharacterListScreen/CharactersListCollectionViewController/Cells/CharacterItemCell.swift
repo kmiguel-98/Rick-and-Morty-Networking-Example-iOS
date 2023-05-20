@@ -8,13 +8,13 @@
 import UIKit
 import Nuke
 
-class CharacterItemCell: UICollectionViewCell, NibLoadable {
+final class CharacterItemCell: UICollectionViewCell, NibLoadable {
 
-    @IBOutlet weak var characterUIImageView: UIImageView!
-    @IBOutlet weak var nameUILabel: UILabel!
-    @IBOutlet weak var StatusAndSpeciesUILabel: UILabel!
-    @IBOutlet weak var LastKnownLocationUILabel: UILabel!
-    @IBOutlet weak var originLocationUILabel: UILabel!
+    @IBOutlet private weak var characterUIImageView: UIImageView!
+    @IBOutlet private weak var nameUILabel: UILabel!
+    @IBOutlet private weak var StatusAndSpeciesUILabel: UILabel!
+    @IBOutlet private weak var LastKnownLocationUILabel: UILabel!
+    @IBOutlet private weak var originLocationUILabel: UILabel!
 
     func configure(character: Character) {
         
@@ -23,7 +23,7 @@ class CharacterItemCell: UICollectionViewCell, NibLoadable {
         LastKnownLocationUILabel.text = character.location.name
         originLocationUILabel.text = character.origin.name
             
-        if let url = URL(string: character.image) {
+        if let url = character.image {
             
             Nuke.loadImage(with: url, into: characterUIImageView)
         }
